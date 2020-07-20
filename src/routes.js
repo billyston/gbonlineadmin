@@ -1,25 +1,27 @@
 import Route                                from "vue-routisan";
 
-// Administrators routes
-import AdministratorLogin                   from "./Components/Administrators/Login/Login";
-import AdministratorDashboard               from "./Components/Administrators/Dashboard/Dashboard";
+// Admin routes
+import AdministratorLogin                   from "./Components/Admin/Login/Login";
+import AdministratorDashboard               from "./Components/Admin/Dashboard/Dashboard";
+import AdministratorProducts                from "./Components/Admin/Products/Products";
 
-Route.group( { prefix: '/administrators' }, () =>
+Route.group( { prefix: '/admin' }, () =>
 {
-    Route.view( '/',                        AdministratorLogin ).name( 'administrators/login' );
+    Route.view( '/',                        AdministratorLogin ).name( 'administrators/index' );
     Route.view( '/login',                   AdministratorLogin ).name( 'administrators/login' );
     Route.view( '/dashboard',               AdministratorDashboard ).name( 'administrators/dashboard' );
+    Route.view( '/products',                AdministratorProducts ).name( 'administrators/products' );
 });
 
-// Agents routes
-import AgentLogin                           from "./Components/Agents/Login/Login";
-import AgentDashboard                       from "./Components/Agents/Dashboard/Dashboard";
+// Agent routes
+import AgentLogin                           from "./Components/Agent/Login/Login";
+import AgentDashboard                       from "./Components/Agent/Dashboard/Dashboard";
 
-Route.group( { prefix: '/agents' }, () =>
+Route.group( { prefix: '/agent' }, () =>
 {
-    Route.view( '/',                        AgentLogin ).name( 'administrators/login' );
-    Route.view( '/login',                   AgentLogin ).name( 'administrators/login' );
-    Route.view( '/dashboard',               AgentDashboard ).name( 'administrators/dashboard' );
+    Route.view( '/',                        AgentLogin ).name( 'agents/index' );
+    Route.view( '/login',                   AgentLogin ).name( 'agents/login' );
+    Route.view( '/dashboard',               AgentDashboard ).name( 'agents/dashboard' );
 });
 
 // Business routes
@@ -28,9 +30,9 @@ import BusinessDashboard                    from "./Components/Business/Dashboar
 
 Route.group( { prefix: '/business' }, () =>
 {
-    Route.view( '/',                        BusinessLogin ).name( 'administrators/login' );
-    Route.view( '/login',                   BusinessLogin ).name( 'administrators/login' );
-    Route.view( '/dashboard',               BusinessDashboard ).name( 'administrators/dashboard' );
+    Route.view( '/',                        BusinessLogin ).name( 'business/index' );
+    Route.view( '/login',                   BusinessLogin ).name( 'business/login' );
+    Route.view( '/dashboard',               BusinessDashboard ).name( 'business/dashboard' );
 });
 
 // Export the routes
